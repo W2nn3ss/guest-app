@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "9fff483a-053f-4667-a683-ec4e4faf1535",
+		"name": "guests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "9037723"
+	},
+	"item": [
+		{
+			"name": "Создать гостя",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"Test\",\r\n    \"last_name\":\"Testov\",\r\n    \"email\":\"1test7@test.ru\",\r\n    \"phone\":\"+79991113322\",\r\n    \"country\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/guests"
+			},
+			"response": []
+		},
+		{
+			"name": "Изменить гостя",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1G1ONXWgTgTXOJYLEF7VHCOqbOj5mufWuJTdM3y3EXQTXXxmcGu5UOztECNP"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\":\"Test\",\r\n    \"last_name\":\"Testov\",\r\n    \"email\":\"test@test.ru\",\r\n    \"phone\":\"+79991112233\",\r\n    \"country\":\"Россия\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/guests/5"
+			},
+			"response": []
+		},
+		{
+			"name": "Получить гостя по id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1G1ONXWgTgTXOJYLEF7VHCOqbOj5mufWuJTdM3y3EXQTXXxmcGu5UOztECNP"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:8000/api/guests/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список гостей",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "1G1ONXWgTgTXOJYLEF7VHCOqbOj5mufWuJTdM3y3EXQTXXxmcGu5UOztECNP"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api/guests"
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить гостя",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8000/api/guests/3"
+			},
+			"response": []
+		}
+	]
+}
